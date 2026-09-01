@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      crowd_reports: {
+        Row: {
+          address: string
+          created_at: string
+          id: string
+          lat: number
+          level: string
+          lng: number
+          note: string | null
+          place_key: string
+          place_name: string
+          session_id: string | null
+        }
+        Insert: {
+          address?: string
+          created_at?: string
+          id?: string
+          lat: number
+          level: string
+          lng: number
+          note?: string | null
+          place_key: string
+          place_name: string
+          session_id?: string | null
+        }
+        Update: {
+          address?: string
+          created_at?: string
+          id?: string
+          lat?: number
+          level?: string
+          lng?: number
+          note?: string | null
+          place_key?: string
+          place_name?: string
+          session_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

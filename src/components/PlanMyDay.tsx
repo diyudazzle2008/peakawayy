@@ -134,9 +134,11 @@ export function PlanMyDay({
                   <p className="truncate text-[11px] text-muted-foreground">{item.stop.address}</p>
                   <div className="mt-2 flex flex-wrap items-center gap-2">
                     <CrowdBadge level={item.stats.level} size="sm" />
-                    <span className="text-[11px] text-muted-foreground">
-                      {timeAgo(item.stats.lastReportAt)}
-                    </span>
+                    {item.stats.lastReportAt && (
+                      <span className="text-[11px] text-muted-foreground">
+                        {timeAgo(item.stats.lastReportAt)}
+                      </span>
+                    )}
                     {origin && (
                       <span className="text-[11px] text-muted-foreground">
                         {item.distKm.toFixed(1)} km

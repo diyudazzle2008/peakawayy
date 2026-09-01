@@ -248,7 +248,7 @@ function Home() {
             </div>
           </div>
 
-          <aside className="glass flex h-[72vh] flex-col overflow-hidden rounded-3xl">
+          <aside className="glass flex h-[68vh] flex-col overflow-hidden rounded-3xl lg:h-[72vh]">
             <div className="flex gap-1 border-b border-border p-2">
               <TabButton active={tab === "place"} onClick={() => setTab("place")} icon={<Layers className="h-4 w-4" />}>
                 Place

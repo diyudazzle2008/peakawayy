@@ -25,7 +25,7 @@ export const LEVELS: {
   { id: "very_busy", label: "Very Busy", value: 4, token: "var(--verybusy)", hint: "Packed" },
 ];
 
-export const levelMeta = (level: CrowdLevel) => LEVELS.find((l) => l.id === level) ?? LEVELS[1];
+export const levelMeta = (level: CrowdLevel) => LEVELS.find((l) => l.id === level) ?? LEVELS[1]!;
 
 export const placeKey = (lat: number, lng: number) => `${lat.toFixed(4)},${lng.toFixed(4)}`;
 
@@ -102,7 +102,7 @@ export function computeCrowdStats(reports: CrowdReport[], now = Date.now()): Cro
 
   const score = weighted / weights;
   const rounded = Math.min(4, Math.max(1, Math.round(score)));
-  const level = (LEVELS.find((l) => l.value === rounded) ?? LEVELS[1]).id;
+  const level = (LEVELS.find((l) => l.value === rounded) ?? LEVELS[1]!).id;
   const confidence = Math.round(Math.min(1, weights / 4) * 100);
 
   const lastHours = ageHours(new Date(latest).toISOString(), now);

@@ -47,8 +47,8 @@ export default function CrowdMap({ markers, selected, flyTo, onPick, onMarkerSel
       zoomControl: true,
       attributionControl: true,
     });
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-      attribution: "&copy; OpenStreetMap &copy; CARTO",
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors",
       maxZoom: 19,
     }).addTo(map);
     map.on("click", (e: L.LeafletMouseEvent) => {
